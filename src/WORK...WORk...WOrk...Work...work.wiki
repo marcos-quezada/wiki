@@ -25,7 +25,7 @@ By the way, the reason it is called ObjectMapper is because it maps JSON into Ja
 
 * Read Object from JSON String
 Reading a Java object from a JSON string is pretty easy. You have actually already seen an example of how. The JSON string is passed as the first parameter to the ObjectMapper's readValue() method. Here is another simplified example:
-{{{
+{{{java
 ObjectMapper objectMapper = new ObjectMapper();
 
 String carJson =
