@@ -17,6 +17,7 @@
 * Vim
 * Git
 * LaTeX
+* [[Visual Studio Code]]
 
 == Dev Environment ==
 * [[MacOSX]]
@@ -24,7 +25,10 @@
 
 = Projects =
 1. T-Kubik
-2. WORK...WORk...WOrk...Work...work
+2. [[WORK...WORk...WOrk...Work...work]]
+3. [[Google Coral]]
+4. [[Arduino Word Clock]]
+
 
 {{{
              .-=-==--==--.
