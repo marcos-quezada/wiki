@@ -1,0 +1,33 @@
+== MacOSX Development Environment Setup and Links ==
+* Brew installation:
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+== Tricks & Tips ==
+* vimwiki
+
+  1. Install and configure vim, with all required plugins.
+  2. Create the following AppleScript on Automator > Services
+
+{{{
+on run {input}
+	set cmd to "vim -f -g --servername Notes -u ~/.vim/notes.vim"
+	tell application "System Events" to set terminalIsRunning to exists application process "iTerm"
+	tell application "iTerm"
+		if terminalIsRunning is false then
+			create window with default profile
+		end if
+		tell current session of current window
+			write text cmd
+		end tell
+	end tell
+end run
+}}}
+
+Note: -g option in command only if MacVim is installed and is prefered.
+
+  3. Assign a shortcut in System Preferences.
+
+* iTerm
+* zsh
+* oh-myzsh
+

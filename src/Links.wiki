@@ -1,0 +1,3 @@
+= Links and descriptions =
+* vimwiki GitHub -- https://github.com/vimwiki/vimwiki
+* 
