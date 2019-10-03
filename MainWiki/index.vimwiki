@@ -1,0 +1,46 @@
+# Main Wiki Index
+
+## Diary Indexes
+* [[diary/diary|Diary Index (vimwiki)]]
+* [[MainWiki/diary/index|Diary Index (gollum)]]
+
+# Know-it-all Database 
+# Knowledge base 
+* [[Tasks]] -- Things to be done ... _YESTERDAY_!!!
+* [[Links]]
+* Scratchpad -- Random temporary stuff
+## Programming 
+* Java and stuff
+* NodeJS
+* C/C++
+* Vert.x
+* Hyperledger
+* Rust
+* Tensorflow
+* Arduino
+
+## Programs 
+* Vim
+* Git
+* LaTeX
+* [[Visual Studio Code]]
+
+## Dev Environment 
+* [[MacOSX]]
+* [[Linux]]
+
+To start installation, I have created a gist, that you can download and it would set everything for you:
+
+`curl -Lks https://mquezada.page.link/cfg-install | /bin/bash`
+
+Once that's done you just need to restart the shell (and have zsh already as your default shell), and for vim, run the following:
+
+`:PluginInstall`
+
+
+# Projects 
+1. T-Kubik
+2. [[WORK...WORk...WOrk...Work...work]]
+3. [[Google Coral]]
+4. [[Arduino Word Clock]]
+

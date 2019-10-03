@@ -1,6 +1,0 @@
-= Links and descriptions =
-* vimwiki GitHub -- https://github.com/vimwiki/vimwiki
-* dotfile starter -- https://github.com/holman/dotfiles
-* original idea -- http://www.gpick.org/blog/vim/as-dedicated-note-taking-application.html
-* spaceship promt, current favourite -- https://github.com/denysdovhan/spaceship-prompt
-* 

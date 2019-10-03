@@ -1,5 +1,0 @@
-= TODO =
-* [X] Setup Vim on Mac.
-* [X] Set notes plugins and stuff.
-* [ ] Replicate everywhere.
-* [ ] Create repository for notes.
