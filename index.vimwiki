@@ -1,5 +1,16 @@
 # All wikis index page (Root Directory)
 
+* This is the "home"/landing page for Gollum only (His preciiiooouuus!!)
+* Vimwiki does not make any use of this page
+* EditMe as needed
+
+## Useful links
+* wiki:     [Search Examples](/MainWiki/Search Examples)
+* wiki:     [Markdown Reference](/MainWiki/Demo Page)
+* external: [Vimwiki Cheatsheet](http://thedarnedestthing.com/vimwiki%20cheatsheet)
+
+## Wiki and WikiDiary index
+
 1. [[MainWiki/index|Main Wiki]]
     * [[MainWiki/diary/diary|Diary Index (vimwiki)]]
     * [[MainWiki/diary/index|Diary Index (gollum)]]
@@ -7,3 +18,35 @@
 2. [[WorkWiki/index|Work Wiki]]
     * [[WorkWiki/diary/diary|Diary Index (vimwiki)]]
     * [[WorkWiki/index/index|Diary Index (gollum)]]
+
+´´´
+             .-=-==--==--.
+       ..-=="  ,'o`)      `.
+     ,'         `"'         \
+    :  (                     `.__...._
+    |                  )    /         `-=-.
+    :       ,vv.-._   /    /               `---==-._
+     \/\/\/VV ^ d88`;'    /                         `.
+         ``  ^/d88P!'    /             ,              `._
+            ^/    !'   ,.      ,      /                  "-,,__,,--'""""-.
+           ^/    !'  ,'  \ . .(      (         _           )  ) ) ) ))_,-.\
+          ^(__ ,!',"'   ;:+.:%:a.     \:.. . ,'          )  )  ) ) ,"'    '
+          ',,,'','     /o:::":%:%a.    \:.:.:         .    )  ) _,'
+           """'       ;':::'' `+%%%a._  \%:%|         ;.). _,-""
+                  ,-='_.-'      ``:%::)  )%:|        /:._,"
+                 (/(/"           ," ,'_,'%%%:       (_,'
+                                (  (//(`.___;        \
+                                 \     \    `         `
+                                  `.    `.   `.        :
+                                    \. . .\    : . . . :
+                                     \. . .:    `.. . .:
+                                      `..:.:\     \:...\
+                                       ;:.:.;      ::...:
+                                       ):%::       :::::;
+                                   __,::%:(        :::::
+                                ,;:%%%%%%%:        ;:%::
+                                  ;,--""-.`\  ,=--':%:%:\
+                                 /"       "| /-".:%%%%%%%\
+                                                 ;,-"'`)%%)
+                                                /"      "|
+´´´
