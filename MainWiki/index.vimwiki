@@ -1,15 +1,11 @@
 # Main Wiki Index
 
-## Diary Indexes
-* [[diary/diary|Diary Index (vimwiki)]]
-* [[MainWiki/diary/index|Diary Index (gollum)]]
-
-# Know-it-all Database 
-# Knowledge base 
+## Know-it-all Database 
+## Knowledge base 
 * [[Tasks|Things to be done ... _YESTERDAY_!!!]]
 * [[Links]]
 * Scratchpad -- Random temporary stuff
-## Programming 
+### Programming 
 * Java and stuff
 * NodeJS
 * C/C++
@@ -19,18 +15,18 @@
 * Tensorflow
 * Arduino
 
-## Container Tools
+### Container Tools
 * [[Docker]]
 * Podman
 * Kubernetes
 
-## Programs 
+### Programs 
 * Vim
 * Git
 * LaTeX
 * [[Visual Studio Code]]
 
-## Dev Environment 
+### Dev Environment 
 * [[MacOSX]]
 * [[Linux]]
 
@@ -43,7 +39,7 @@ Once that's done you just need to restart the shell (and have zsh already as you
 `:PluginInstall`
 
 
-# Projects 
+## Projects 
 1. T-Kubik
 2. [[Google Coral]]
 3. [[Arduino Word Clock]]
