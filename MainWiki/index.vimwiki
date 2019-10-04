@@ -4,10 +4,6 @@
 * [[diary/diary|Diary Index (vimwiki)]]
 * [[MainWiki/diary/index|Diary Index (gollum)]]
 
-## Start here
-* [[Demo Page]]
-* [[Search Examples]]
-
 # Know-it-all Database 
 # Knowledge base 
 * [[Tasks|Things to be done ... _YESTERDAY_!!!]]
@@ -22,6 +18,11 @@
 * Rust
 * Tensorflow
 * Arduino
+
+## Container Tools
+* [[Docker]]
+* Podman
+* Kubernetes
 
 ## Programs 
 * Vim
