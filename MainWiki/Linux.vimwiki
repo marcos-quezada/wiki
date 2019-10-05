@@ -1,52 +1,5 @@
 ## Tricks & Tips
 
-### Network
+* [[Networking]]
+* [[Utilities]]
 
-* telnet
-
-```bash
-telnet {host} {port}
-    
-$ telnet 192.168.2.254 88
-```
-
-* nc
-
-```bash
-nc -vz {host} {port}
-    
-$ nc -vz 192.168.2.254 80
-```
-
-* nmap (ping)
-
-```bash
-nmap -Pnp {port} {host}
-nmap -p {port} {host}
-    
-$ nmap -p 443 192.168.2.254
-```
-
-### Check if port is in use
-
-1. lsof command:
-
-```bash
-$ sudo lsof -i -P -n
-$ sudo lsof -i -P -n | grep LISTEN
-$ doas lsof -i -P -n | grep LISTEN ### [OpenBSD] ###
-```
-       
-2. netstat command:
-
-```bash
-$ netstat -tulpn | grep LISTEN
-```
-       
-3. nmap command:
-
-```bash
-$ sudo nmap -sT -O localhost
-$ sudo nmap -sU -O 192.168.2.13 ##[ list open UDP ports ]##
-$ sudo nmap -sT -O 192.168.2.13 ##[ list open TCP ports ]##
-```

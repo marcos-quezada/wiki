@@ -1,0 +1,18 @@
+# Linux utility commands
+
+## Rename jpeg files to contain the date the picture was taken
+
+* Get and install jhead
+* The command I used goes like this:
+
+```bash
+$ jhead -nDSC_%Y%m%d_%H%M%S *.jpg 
+```
+
+## Watch Netflix on ubuntu
+
+* Navigate to Firefox preferences settings and search for DRM. Tick the Play DRM-controlled content check box.
+* Install extra codecs, like this:
+```bash
+$ sudo apt install libavcodec-extra
+```
