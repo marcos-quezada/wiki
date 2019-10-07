@@ -1,0 +1,7 @@
+# Configuration
+config:
+  wikidir: $HOME/wiki
+  gollumconfigfile: $HOME/wiki/admin/config.rb
+  gollumport: 4567
+  templatedir: $HOME/wiki/admin/templates
+
