@@ -1,0 +1,16 @@
+#IntelliJ IDEA
+
+##Most Useful shorcuts
+
+| Shorcut                                          | Action                              |
+| : -------------                                  | :-------------                      |
+| Double `Shift`                                   | Search everywhere                   |
+| `Ctrl+Shift+A`                                   | Find action                         |
+| `Ctrl+Alt+O`                                     | Optimize imports                    |
+| `Ctrl+N`<br>`Ctrl+Shift+N`<br>`Ctrl+Shift+Alt+N` | Find a class,<br>file,<br>or symbol |
+| Double `Ctrl`                                    | Run anything                        |
+| `Ctrl+E`                                         | View recent files                   |
+| `Alt+Enter`                                      | Show intention actions              |
+| `Ctrl+Space`                                     | Basic code completion               |
+| `Ctrl+Shift+Enter`                               | Complete current statement          |
+| `Ctrl+Alt+L`                                     | Reformat code                       |
