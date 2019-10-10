@@ -14,3 +14,7 @@
 | `Ctrl+Space`                                     | Basic code completion               |
 | `Ctrl+Shift+Enter`                               | Complete current statement          |
 | `Ctrl+Alt+L`                                     | Reformat code                       |
+| `Ctrl+W`<br>` Ctrl+Shift+W`                      | Extend or <br> shrink selection     |
+| `Ctrl+Shift+F7`                                  | Highlight usages in a file          |
+| `Alt+1`                                          | Focus the __Project__ tool window   |
+| `Escape`                                         | Focus the editor                    |
