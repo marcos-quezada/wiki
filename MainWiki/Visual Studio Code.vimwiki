@@ -16,7 +16,7 @@
 | `Ctrl + Shift + G`               | Show git options                                  |
 | `Ctrl + Shift + D`               | Show debug options                                |
 | `Ctrl + Shift + X`               | Show extensions panel                             |
-| `CTRL + \`                       | Split editor                                      |
+| <code>CTRL + &#124; </code>      | Split editor                                      |
 | `CTRL + W `                      | Close current tab                                 |
 | `CTRL + N`<br>`CTRL + Shift + N` | New tab <br> window                               |
 | `(F5)`                           | Start debug (Node, VSC Extensions, and .NET Core) |
