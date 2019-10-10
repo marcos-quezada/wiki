@@ -4,21 +4,21 @@
 
 ## Most Useful shorcuts
 
-| Shorcut                          | Action                                            |              |
-| :---                             | :---                                              |              |
-| `Ctrl + Shift + P`<br>`(F1)`     | Display command palette                           |              |
-| `Ctrl + P`                       | Display _search files_ palette                    |              |
-| `Ctrl + Shift + ´`               | Open terminal                                     |              |
-| `Ctrl + Tab`                     | Navigate between files                            |              |
-| `Ctrl + B`                       | Open / close side bar                             |              |
-| `Ctrl + Shift + E`               | Explorer view                                     |              |
-| `Ctrl + Shift + F `              | Search whole project                              |              |
-| `Ctrl + Shift + G`               | Show git options                                  |              |
-| `Ctrl + Shift + D`               | Show debug options                                |              |
-| `Ctrl + Shift + X`               | Show extensions panel                             |              |
-| `CTRL + \                        | `                                                 | Split editor |
-| `CTRL + W `                      | Close current tab                                 |              |
-| `CTRL + N`<br>`CTRL + Shift + N` | New tab <br> window                               |              |
-| `(F5)`                           | Start debug (Node, VSC Extensions, and .NET Core) |              |
-| `(CTRL + K) + M`                 | Set file language                                 |              |
+| Shorcut                          | Action                                            |
+| :---                             | :---                                              |
+| `Ctrl + Shift + P`<br>`(F1)`     | Display command palette                           |
+| `Ctrl + P`                       | Display _search files_ palette                    |
+| `Ctrl + Shift + ´`               | Open terminal                                     |
+| `Ctrl + Tab`                     | Navigate between files                            |
+| `Ctrl + B`                       | Open / close side bar                             |
+| `Ctrl + Shift + E`               | Explorer view                                     |
+| `Ctrl + Shift + F `              | Search whole project                              |
+| `Ctrl + Shift + G`               | Show git options                                  |
+| `Ctrl + Shift + D`               | Show debug options                                |
+| `Ctrl + Shift + X`               | Show extensions panel                             |
+| `CTRL + \`                       | Split editor                                      |
+| `CTRL + W `                      | Close current tab                                 |
+| `CTRL + N`<br>`CTRL + Shift + N` | New tab <br> window                               |
+| `(F5)`                           | Start debug (Node, VSC Extensions, and .NET Core) |
+| `(CTRL + K) + M`                 | Set file language                                 |
 
