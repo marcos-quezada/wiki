@@ -3,7 +3,7 @@
 ## Getting rid of the annoyance of having to provide user and password on every operation.
 
 * Check if you already have ssh keys generated
-* 
+ 
 ```bash
 $ ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist
