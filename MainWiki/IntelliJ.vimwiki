@@ -18,3 +18,4 @@
 | `Ctrl+Shift+F7`                                  | Highlight usages in a file          |
 | `Alt+1`                                          | Focus the __Project__ tool window   |
 | `Escape`                                         | Focus the editor                    |
+|  `Alt+Shift+Left`                                                |  Navigate back                                   |

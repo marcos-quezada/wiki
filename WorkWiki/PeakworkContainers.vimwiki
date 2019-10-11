@@ -1,0 +1,31 @@
+# Most used commands and stuff used while working with containers
+
+Check your `yml` files to check where's everything comming from, for instance, the following:
+
+```yaml
+mysterious-component:
+    build: ./backend/component/docker
+```
+
+is telling us that once we build our project and run:
+
+`$ docker-compose build`
+
+that container is going to be filled with the code we just built in our project. But if we got the following:
+
+```yaml
+another.different-component:
+    image: docker.mycompany.org/base/another:7
+```
+
+is telling us that we are gonna be used a pre-built conatainer that's gonna be downloaded from the source. By the way, if we need to create such component, the following flow of commands is what you're looking for:
+
+```bash
+$ docker build -t docker-repo.mycompany.org/clever/package/clever-namee:WhatheverNameWeSeemFit .
+
+$ docker push docker-repo.mycompany.org/clever/package/clever-namee:WhatheverNameWeSeemFit
+```
+
+Once all that is done, we can finally go back to the root of our project (you know, the one with the `docker-compose.yml` file) and run:
+
+`$docker-compose up -d`
