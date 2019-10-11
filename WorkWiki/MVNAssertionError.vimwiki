@@ -1,0 +1,41 @@
+# Maven compiler will only spit out a cryptic AssertionError with no further clue.
+
+## Description and symptoms
+
+Apache Maven 3.6.1, 64-bit Linux, openjdk 11.0.2 2019-01-15 LTS. Running a `mvn clean install` will fail on compilation with the following stacktrace:
+
+```java
+Exception in thread "main" java.lang.AssertionError
+        at jdk.compiler/com.sun.tools.javac.util.Assert.error(Assert.java:155)
+        at jdk.compiler/com.sun.tools.javac.util.Assert.check(Assert.java:46)
+        at jdk.compiler/com.sun.tools.javac.comp.Modules.enter(Modules.java:244)
+        at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.readSourceFile(JavaCompiler.java:829)
+        at 
+```
+
+## Not how to solve it, but how to track the actual error
+
+No further detail was given, this is not a story of how this gets solve, but how to look under the cryptic `Exception`. Configuring the `maven-compiler-plugin` with the flag ` <forceJavacCompilerUse>true</forceJavacCompilerUse>`, like this:
+
+```xml
+<build>
+  <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.7.0</version>
+          <configuration>
+            <source>10</source>
+            <target>10</target>
+            <release>10</release>
+            <!-- <forceJavacCompilerUse>true</forceJavacCompilerUse> -->
+            <compilerArgs>
+                <arg>-Werror</arg>
+                <arg>-verbose</arg>
+            </compilerArgs>
+          </configuration>
+        </plugin>
+  </plugins>
+</build>
+```
+
+Allowed to get an accurate `Exception` showing the *actual* problem.

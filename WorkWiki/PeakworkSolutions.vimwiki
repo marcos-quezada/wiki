@@ -1,0 +1,3 @@
+# Fantastic bugs 🐛, where to find them, and how to solve them
+
+* [[MVNAssertionError|The history of the cryptic `AssertionError` on maven compile task]]
