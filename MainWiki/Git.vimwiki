@@ -29,6 +29,7 @@ $ xclip -sel clip < ~/.ssh/id_rsa.pub
 * On your github account got to settings -> SSH and GPG keys and add your key, remember to give it a cool name.
 
 * Then it's shell time! (or with your preferred tool for git), check that you're using git protocol on your repositories, and adjust it as needed
+
 ```bash
 $ git remote -v
 origin https://github.com/USERNAME/REPOSITORY.git (fetch)
