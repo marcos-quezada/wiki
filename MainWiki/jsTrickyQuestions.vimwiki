@@ -1,0 +1,103 @@
+## A Tricky JavaScript Interview Question
+
+The question usually looks something like the following:
+
+```javascript
+// interviewer: what will the following code output?
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log('Index: ' + i + ', element: ' + arr[i]);
+  }, 3000);
+}
+```
+
+This question deals with the topics: [[jsClosures|closures]], [[jsSetTimeout|setTimeout]], and [[jsScoping|scoping]].
+
+The correct answer to this is question is:
+
+```bash
+Index: 4, element: undefined
+Index: 4, element: undefined
+Index: 4, element: undefined
+Index: 4, element: undefined
+```
+
+> This question tests your knowledge of some important JavaScript concepts, and because of how the JavaScript language works this is actually something that can come up quite often when you’re working — namely, needing to use setTimeout or some sort of async function within a loop.
+
+If that’s not what you expected, then hopefully the rest of this article will help explain why this is the case in JavaScript.
+
+### Solution
+
+Question: How to properly use closures in loops? Quick answer: Use a function factory.
+
+```javascript
+for (var i=0; i<10; i++) {
+  document.getElementById(i).onclick = (function(x){
+    return function(){
+      alert(x);
+    }
+  })(i);
+}
+```
+
+or the more easily readable version:
+
+```javascript
+function generateMyHandler (x) {
+  return function(){
+    alert(x);
+  }
+}
+
+for (var i=0; i<10; i++) {
+  document.getElementById(i).onclick = generateMyHandler(i);
+}
+```
+
+This often confuse people who are new to javascript or functional programming. It is a result of misunderstanding what closures are.
+
+A closure does not merely pass the value of a variable or even a reference to the variable. A closure captures the variable itself! The following bit of code illustrates this:
+
+```javascript
+var message = 'Hello!';
+document.getElementById('foo').onclick = function(){alert(message)};
+ message = 'Goodbye!';
+```
+
+Clicking the element 'foo' will generate an alert box with the message: "Goodbye!". Because of this, using a simple closure in a loop will end up with all closures sharing the same variable and that variable will contain the last value assigned to it in the loop. For example:
+
+```javascript
+for (var i=0; i<10; i++) {
+   document.getElementById('something'+i).onclick = function(){alert(i)};
+}
+```
+
+All elements when clicked will generate an alert box with the number 10. In fact, if we now do `i="hello";` all elements will now generate a "hello" alert! The variable i is shared across ten functions PLUS the current function/scope/context. Think of it as a sort of private global variable that only the functions involved can see.
+
+What we want is an instance of that variable or at least a simple reference to the variable instead of the variable itself. Fortunately javascript already has a mechanism for passing a reference (for objects) or value (for strings and numbers): function arguments!
+
+When a function is called in javascript the arguments to that function is passed by reference if it is an object or by value if it is a string or number. This is enough to break variable sharing in closures.
+
+So:
+
+```javascript
+for (var i=0; i<10; i++) {
+    document.getElementById(i).onclick =
+        (function(x){ /* we use this function expression simply as a factory
+                      to return the function we really want to use: */
+
+        /* we want to return a function reference
+        so we write a function expression*/
+        return function(){
+            alert(x); /* x here refers to the argument of the factory function
+            captured by the 'inner' closure */
+        }
+
+        /* The brace operators (..) evaluates an expression, in this case this
+        function expression which yields a function reference. */
+
+    })(i) /* The function reference generated is then immediately called()
+              where the variable i is passed */
+}
+```

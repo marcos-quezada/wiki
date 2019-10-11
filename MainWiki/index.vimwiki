@@ -6,7 +6,8 @@
 * [[Links]]
 * Scratchpad -- Random temporary stuff
 ### Programming 
-* [[Java and stuff]]
+* [[Java|Java and stuff]]
+* [[JavaScript]]
 * NodeJS
 * C/C++
 * Vert.x
@@ -24,8 +25,8 @@
 * Vim
 * [[Git]]
 * LaTeX
-* [[Visual Studio Code]]
-* [[IntelliJ IDEA]]
+* [[VSC|Visual Studio Code]]
+* [[IntelliJ|IntelliJ IDEA]]
 
 ### Environmental tips & tricks 
 * [[MacOSX]]
@@ -42,6 +43,6 @@ Once that's done you just need to restart the shell (and have zsh already as you
 
 ## Projects 
 1. T-Kubik
-2. [[Google Coral]]
-3. [[Arduino Word Clock]]
+2. [[GCoral|Google Coral]]
+3. [[InoWordClock|Arduino Word Clock]]
 
