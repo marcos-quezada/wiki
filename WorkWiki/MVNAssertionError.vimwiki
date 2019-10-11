@@ -1,4 +1,4 @@
-# Maven compiler will only spit out a cryptic AssertionError with no further clue.
+# Maven compiler will only spit out a cryptic `AssertionError` with no further clue.
 
 ## Description and symptoms
 
