@@ -197,3 +197,107 @@ lines:
 Since we have a method called "main" in our JVM, all our strings are sharing its `byte[]`. 
 
 ## Young GC
+
+So far we have only considered full GC. However, there's also support for triggering a young GC with the command `ygc`.  First we'll need to find the garbage collector `MXBean` for the G1 Young Generation. Then loop whilst the collection count is the same and allocate 1k byte arrays. Escape analysis won't remove the heap allocation since the arrays are larger than 64. Here's the code:
+
+```java
+private static void youngGC() {
+  long collectionCount = YOUNG_GC.getCollectionCount();
+  do {
+    // array is too big to be eliminated with escape analysis
+    byte[] bytes = new byte[1024];
+  } while (YOUNG_GC.getCollectionCount() == collectionCount);
+} 
+
+private final static GarbageCollectorMXBean YOUNG_GC; 
+
+static {
+  YOUNG_GC = ManagementFactory.getGarbageCollectorMXBeans()
+      .stream()
+      .filter(pool -> pool.getName().equals(
+          "G1 Young Generation"))
+      .findFirst()
+      .orElseThrow(() -> new Error("Could not find G1 Young " +
+          "Generation Garbage Collector MXBean"));
+}
+```
+
+Now, we issue the following commands:
+
+```bash
+hello
+hello
+hello
+ygc
+hello
+ygc
+hello
+ygc
+print
+```
+
+Each time that we send the `ygc` we see a "Pause Young (Normal)" appear on the console. After the third `ygc`, we also see the deduplication statistics appear. The `print` now looks like this:
+
+```bash
+print
+lines:
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@37f8bb67
+  "hello" - [B@49c2faae
+```
+
+Thus the first three "hello" strings have been deduplicated, but not the other two. If we issue another `ygc` and `print`, this now becomes:
+
+```bash
+print
+lines:
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@49c2faae
+```
+
+And with the next `ygc`, the `print` yields:
+
+```bash
+print
+lines:
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+```
+
+It all works how it is supposed to. 
+
+<h2><code>-XX:+AlwaysTenure</code></h2>
+
+A rather weird flag in OpenJDK is `-XX:+AlwaysTenure`. It effectively does away with the survivor spaces and promotes all survivors from young to old. Whilst you would not want to use this in production, it is fun to turn it on for this experiment. If we now send the following:
+
+```bash
+hello
+hello
+hello
+ygc
+print
+```
+
+We will see similar output to what we saw with the call to `System.gc()`:
+
+```bash
+hello
+hello
+hello
+ygc
+[154.162s][info][gc] GC(0) Pause Young (Normal)
+        *snip* GC output and deduplication statistics *snip*
+print
+lines:
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+  "hello" - [B@5d099f62
+```
