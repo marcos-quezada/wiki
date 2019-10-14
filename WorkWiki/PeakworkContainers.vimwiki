@@ -21,9 +21,9 @@ another.different-component:
 is telling us that we are gonna be used a pre-built conatainer that's gonna be downloaded from the source. By the way, if we need to create such component, the following flow of commands is what you're looking for:
 
 ```bash
-$ docker build -t docker-repo.mycompany.org/clever/package/clever-namee:WhatheverNameWeSeemFit .
+$ docker build -t docker-repo.mycompany.org/clever/package/clever-name:WhatheverNameWeSeemFit .
 
-$ docker push docker-repo.mycompany.org/clever/package/clever-namee:WhatheverNameWeSeemFit
+$ docker push docker-repo.mycompany.org/clever/package/clever-name:WhatheverNameWeSeemFit
 ```
 
 Once all that is done, we can finally go back to the root of our project (you know, the one with the `docker-compose.yml` file) and run:

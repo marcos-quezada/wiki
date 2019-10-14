@@ -1,39 +1,5 @@
-# Tips & tricks for git-fu
+# Tips & tricks for Git-fu
 
-## Getting rid of the annoyance of having to provide user and password on every operation.
+* [[GitCommands|A list of commonly used Git commands]]
+* [[GitSSH|Registering ssh keys on Git]]
 
-* Check if you already have ssh keys generated
- 
-```bash
-$ ls -al ~/.ssh
-# Lists the files in your .ssh directory, if they exist
-```
-
-* In case there's none, you'll need to generate new ones like this:
-
-```bash
-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
-Just follow the prompts... You can do it!
-
-* Copy the ssh key to you'clipboard, you may use xclip for convenience
-
-```bash
-$ sudo apt-get install xclip
-# Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer (like `yum`)
-
-$ xclip -sel clip < ~/.ssh/id_rsa.pub
-# Copies the contents of the id_rsa.pub file to your clipboard
-```
-
-* On your github account got to settings -> SSH and GPG keys and add your key, remember to give it a cool name.
-
-* Then it's shell time! (or with your preferred tool for git), check that you're using git protocol on your repositories, and adjust it as needed
-
-```bash
-$ git remote -v
-origin https://github.com/USERNAME/REPOSITORY.git (fetch)
-origin https://github.com/USERNAME/REPOSITORY.git (push)
-
-$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
-```
