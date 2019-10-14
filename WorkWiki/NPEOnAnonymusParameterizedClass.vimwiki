@@ -55,8 +55,8 @@ static class Bug<T> {
 }
 ```
 
-And testing locally I was able to reproduce he error issuing a `mvn clean install -DskipTests` with `JDK 11.0.2`.
+And testing locally I was able to reproduce the error issuing a `mvn clean install -DskipTests` with `JDK 11.0.2`.
 
 ### Ultimate solution
 
-It comes down to patch our code but he have no idea how many pieces of offending code we will find, or the final an simple resolution of _Update your <code>java</code> version on Bamboo_
+It comes down to: either, patch our code but he have no idea how many pieces of offending code we will find, or the final an simpler solution of _Update your <code>java</code> version on Bamboo_

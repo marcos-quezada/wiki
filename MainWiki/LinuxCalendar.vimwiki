@@ -1,0 +1,12 @@
+Why I can't see my appointments on my gnome calendar?
+-----------------------------------------------------
+
+### Symptoms
+
+I was able to integrate my office365 account on my linux accounts succesfully, but for some reado, I got no notifications on the native calendar. While it's not a deal breaker, it certainly is an annoyance.
+
+### The cure
+
+The Exchange account was properly accepted in *Online Accounts* section with the *Calendar* toggle enabled but it did not appear in the native calendar app.
+
+Installing *evolution-ews* with `sudo apt-get install evolution-ews` made it work normally

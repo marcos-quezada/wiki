@@ -1,0 +1,25 @@
+Compinit and the dilema of the problems of updating _argument completion_
+-----------------------------------------------------------------------
+
+### Background
+
+As part of my environment I installed autocompletion for the programs I use the most, and everything was working fine, until I decided to remove an autocompletion that was so slow for my taste and then found an annoying message on every shell session claiming that it couldn't load the old module.
+
+### Resolution
+
+13
+
+If you are having problems getting _argument completion_ working for the new commands then `compinit` is probably the command you need, however it has a caching mechanism that might be causing your problem.
+
+The documentation says that compinit uses a cached `dump file`, `.zcompdump`, to store compiled completion functions to speed up subsequent invocations. It only invalidates the dump file when it notices a change in the number of completion files (fpath element files that start with `#compdef …` or `#autoload …`). Presumably installing new software would change the number of such completion files (assuming that it also installed its zsh auto-complete files in the right place), so I would expect a plain `compinit` to work. If you are in a situation where it does not work you may need to bypass or manually invalidate the dump file.
+
+To skip using the dump file, use `compinit -D`; this will only affect the current shell.
+
+To rebuild the dump file, remove it and rerun `compinit`:
+
+```bash
+$ rm -i ${ZDOTDIR:-${HOME:?No ZDOTDIR or HOME}}/.zcompdump &&
+compinit
+```
+
+This will affect the current shell, existing shells that run plain `compinit`, and any future shells.
