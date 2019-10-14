@@ -1,11 +1,12 @@
-# Main Wiki Index
+Main Wiki Index
+---------------
 
-## Know-it-all Database 
-## Knowledge base 
+### Know-it-all Database 
+#### Knowledge base 
 * [[Tasks|Things to be done ... _YESTERDAY_!!!]]
 * [[Links]]
 * Scratchpad -- Random temporary stuff
-### Programming 
+#### Programming 
 * [[Java|Java and stuff]]
 * [[JavaScript]]
 * NodeJS
@@ -16,19 +17,19 @@
 * Tensorflow
 * Arduino
 
-### Container Tools
+#### Container Tools
 * [[Docker]]
 * Podman
 * Kubernetes
 
-### Programs 
+#### Programs 
 * Vim
 * [[Git|Git-Fu]]
 * LaTeX
 * [[VSC|Visual Studio Code]]
 * [[IntelliJ|IntelliJ IDEA]]
 
-### Environmental tips & tricks 
+#### Environmental tips & tricks 
 * [[MacOSX]]
 * [[Linux]]
 
@@ -41,7 +42,7 @@ Once that's done you just need to restart the shell (and have zsh already as you
 `:PluginInstall`
 
 
-## Projects 
+#### Projects 
 1. T-Kubik
 2. [[GCoral|Google Coral]]
 3. [[InoWordClock|Arduino Word Clock]]

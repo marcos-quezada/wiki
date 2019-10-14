@@ -1,16 +1,17 @@
-# All wikis index page (Root Directory)
+All wikis index page (Root Directory)
+-------------------------------------
 
 * This is the "home"/landing page for Gollum only (His preciiiooouuus!!)
 * Vimwiki does not make any use of this page
 * EDITME as needed
 
-## Wikis index ...
+### Wikis index ...
 
 1. [[MainWiki/index|Main Wiki]]
 
 2. [[WorkWiki/index|Work Wiki]]
 
-## ... or start here
+### ... or start here
 
 * [[MainWiki/Demo|Demo page]]
 * [[MainWiki/SearchExamples|Search examples]]
