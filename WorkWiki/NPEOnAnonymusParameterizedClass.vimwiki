@@ -1,0 +1,62 @@
+A real life story of: _It's working on my local environment_ and failing on Bamboo.
+---------------------------------------------------------------------------------
+
+### Description and symptoms
+
+Apache Maven 3.6.1, 64-bit Linux, openjdk 11.0.4 2019-07-16 for *local* environment will compile succesfuly, but on our CI/CD Atlassian Bamboo version 5.15.5 build 51518 with openjdk 11.0.2 2019-01-15 LTS we see the following in the logs:
+
+```java
+compiler message file broken: key=compiler.misc.msg.bug arguments=11.0.2, {1}, {2}, {3}, {4}, {5}, {6}, {7} java.lang.NullPointerException at 
+jdk.compiler/com.sun.tools.javac.comp.Flow$FlowAnalyzer.visitApply(Flow.java:1235) at 
+jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1634) at 
+jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49) at 
+jdk.compiler/com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:398) at 
+jdk.compiler/com.sun.tools.javac.comp.Flow$FlowAnalyzer.visitVarDef(Flow.java:989) 
+```
+
+An example of the transgressing code:
+
+```java
+public static void main(String[] args) {
+    RestTemplate restTemplate = new RestTemplate();
+
+    HttpHeaders headers = new HttpHeaders();
+    headers.set(HttpHeaders.AUTHORIZATION, "token");
+    HttpEntity<Object> requestEntity = new HttpEntity<>(headers);
+
+    ResponseEntity<Object> test = restTemplate.exchange(
+            "https://example.com",
+            HttpMethod.GET,
+            new HttpEntity<>(headers),
+            new ParameterizedTypeReference<>() { // fails here
+            });
+}
+```
+
+Changing the diamond operator to explicit type `new ParameterizedTypeReference<>(){}` to `new ParameterizedTypeReference<Object>(){}` seems to solve the problem but...
+
+### This is not a good enough answer
+
+Digging up a little bit, we found that it is a known bug [JDK-8212586](https://bugs.openjdk.java.net/browse/JDK-8212586) that was submited and fixed in version 12, backported to `JDK 11` and even available on `JDK 11.0.4` which we can verify with the minimal example:
+
+```java
+public static void main(String[] args) {
+    new Bug<>(){};
+}
+
+static class Bug<T> {
+
+    Bug() {
+        test(new ParameterizedTypeReference<>(){});
+    }
+
+    void test(ParameterizedTypeReference<T> typeReference) {
+    }
+}
+```
+
+And testing locally I was able to reproduce he error issuing a `mvn clean install -DskipTests` with `JDK 11.0.2`.
+
+### Ultimate solution
+
+It comes down to patch our code but he have no idea how many pieces of offending code we will find, or the final an simple resolution of _Update your <code>java</code> version on Bamboo_

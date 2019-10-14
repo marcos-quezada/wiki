@@ -2,3 +2,4 @@ Fantastic bugs 🐛, where to find them, and how to solve them
 ------------------------------------------------------------
 
 * [[MVNAssertionError|The history of the cryptic <code>AssertionError</code> on maven compile task]]
+* [[NPEOnAnonymusParameterizedClass|The 0.0.2 version difference that caused the feared <code>NullPointerException</code> ]]
