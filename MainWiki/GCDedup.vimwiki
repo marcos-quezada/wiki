@@ -1,4 +1,5 @@
-# Excursions into deduplication
+Excursions into deduplication
+=============================
 
 The best way of tell how effective *string deduplication* would be in an application would be to look at the response rates and memory consumption. In the end, what does it matter if we saved memory, but our performance is worse? Memory is cheap. On the other hand, less memory consumption leads to less reachable objects, and can thus give us better speed.
 
