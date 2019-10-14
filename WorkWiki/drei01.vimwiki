@@ -1,22 +1,22 @@
 What I learnt while hanging with the isurance guys
-==================================================
+--------------------------------------------------
 
-## Frontend
-### Mithril
-### Links
+### Frontend
+#### Mithril
+#### Links
 * https://mithril.js.org/
 
-## Web Services
+### Web Services
 Content type definitions"
 * .xls -- `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
 * .csv -- `text/csv`
 * .pdf -- `application/pdf`
 
-## Java
-### Jackson Object Mapper
-### Links
+### Java
+#### Jackson Object Mapper
+#### Links
 * http://tutorials.jenkov.com/java-json/jackson-objectmapper.html#read-object-from-json-string
-### TL;DR;
+#### TL;DR;
 The Jackson ObjectMapper class (com.fasterxml.jackson.databind.ObjectMapper) is the simplest way to parse JSON with Jackson. The Jackson ObjectMapper can parse JSON from a string, stream or file, and create a Java object or object graph representing the parsed JSON. Parsing JSON into Java objects is also referred to as to deserialize Java objects from JSON.
 
 The Jackson ObjectMapper can also create JSON from Java objects. Generating JSON from Java objects is also referred to as to serialize Java objects into JSON.
@@ -42,14 +42,14 @@ Sometimes you have more fields in the JSON than you do in the Java object you wa
 However, sometimes it should be allowed to have more fields in the JSON than in the corresponding Java object. For instance, if you are parsing JSON from a REST service which contains much more data than you need. In that case, Jackson enables you to ignore these extra fields with a Jackson configuration. Here is how configuring the Jackson ObjectMapper to ignore unknown fields looks:
 `objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);`
 
-### LocalDateTime (Java 8)
+#### LocalDateTime (Java 8)
 It turns out Java does not accept a bare Date value as DateTime. Using LocalDate instead of LocalDateTime solves the issue:
 ```java
 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 LocalDate dt = LocalDate.parse("20140218", formatter);
 ```
 
-### Setting the Decimal Place of a Big Decimal Value
+#### Setting the Decimal Place of a Big Decimal Value
 ```java
 import java.math.BigDecimal;
 
@@ -64,14 +64,14 @@ public class Main {
 }
 ```
 
-### Getting `ZoneOffset` from `ZoneId`
+#### Getting `ZoneOffset` from `ZoneId`
 ```java
 Instant instant = Instant.now(); //can be LocalDateTime
 ZoneId systemZone = ZoneId.systemDefault(); // my timezone
 ZoneOffset currentOffsetForMyZone = systemZone.getRules().getOffset(instant);
 ```
 
-### JXLS using SimpleExporter
+#### JXLS using SimpleExporter
 It requires the following dependencies on your project:
 `runtimeLibs "org.jxls:jxls:${Settings.jxls.version}"`
 `runtimeLibs "org.jxls:jxls-poi:${Settings.jxlspoi.version}"`

@@ -1,10 +1,10 @@
 Lombok project
-==============
+--------------
 
-## @EqualsAndHashCode
+### @EqualsAndHashCode
 
 
-<h3 class="centerme">Equality made easy: Generates <code>hashCode</code> and <code>equals</code> implementations from the fields of your object.</h3>
+<h4 class="centerme">Equality made easy: Generates <code>hashCode</code> and <code>equals</code> implementations from the fields of your object.</h4>
 
  Any class definition may be annotated with `@EqualsAndHashCode` to let lombok generate implementations of the `equals(Object other)` and `hashCode()` methods. By default, it'll use all non-static, non-transient fields, but you can modify which fields are used (and even specify that the output of various methods is to be used) by marking type members with `@EqualsAndHashCode.Include` or `@EqualsAndHashCode.Exclude`. Alternatively, you can specify exactly which fields or methods you wish to be used by marking them with `@EqualsAndHashCode.Include` and using `@EqualsAndHashCode(onlyExplicitlyIncluded = true)`.
 
@@ -12,7 +12,7 @@ If applying `@EqualsAndHashCode` to a class that extends another, this feature g
 
 Setting `callSuper` to _true_ when you don't extend anything (you extend `java.lang.Object`) is a compile-time error, because it would turn the generated `equals()` and `hashCode()` implementations into having the same behaviour as simply inheriting these methods from `java.lang.Object`: only the same object will be equal to each other and will have the same hashCode. Not setting `callSuper` to _true_ when you extend another class generates a warning, because unless the superclass has no (equality-important) fields, lombok cannot generate an implementation for you that takes into account the fields declared by your superclasses. You'll need to write your own implementations, or rely on the `callSuper` chaining facility. You can also use the `lombok.equalsAndHashCode.callSuper` config key.
 
-<h3 class="centerme">With Lombok</h3>
+<h4 class="centerme">With Lombok</h4>
 
 ```java
 import lombok.EqualsAndHashCode;
@@ -42,7 +42,7 @@ public class EqualsAndHashCodeExample {
 }
 ```
 
-<h3 class="centerme">Vanilla java</h3>
+<h4 class="centerme">Vanilla java</h4>
 
 ```java
 import java.util.Arrays;
@@ -119,7 +119,7 @@ public class EqualsAndHashCodeExample {
 }
 ```
 
-### Supported configuration keys
+#### Supported configuration keys
 
 `lombok.equalsAndHashCode.doNotUseGetters = [true | false] (default: false)`
 
@@ -135,9 +135,7 @@ If set to `call`, lombok will generate calls to the superclass implementation of
 
 Lombok will flag any usage of `@EqualsAndHashCode` as a warning or error if configured. 
 
-### Small print
-
-
+#### Small print
 
 Arrays are 'deep' compared/hashCoded, which means that arrays that contain themselves will result in `StackOverflowErrors`. However, this behaviour is no different from e.g. `ArrayList`.
 

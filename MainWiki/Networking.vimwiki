@@ -1,5 +1,5 @@
 Network on linux
-================
+----------------
 
 * telnet
 
@@ -26,7 +26,7 @@ nmap -p {port} {host}
 $ nmap -p 443 192.168.2.254
 ```
 
-### Check if port is in use
+#### Check if port is in use
 
 1. lsof command:
 

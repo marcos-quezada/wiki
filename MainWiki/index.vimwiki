@@ -33,6 +33,8 @@ Main Wiki Index
 * [[MacOSX]]
 * [[Linux]]
 
+---
+
 To start installation, I have created a gist, that you can download and it would set everything for you:
 
 `curl -Lks https://mquezada.page.link/cfg-install | /bin/bash`

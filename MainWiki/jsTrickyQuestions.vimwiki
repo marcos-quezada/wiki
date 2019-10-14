@@ -1,5 +1,5 @@
 A Tricky JavaScript Interview Question
-======================================
+--------------------------------------
 
 The question usually looks something like the following:
 
@@ -28,7 +28,7 @@ Index: 4, element: undefined
 
 If that’s not what you expected, then hopefully the rest of this article will help explain why this is the case in JavaScript.
 
-### Solution
+#### Solution
 
 Question: How to properly use closures in loops? Quick answer: Use a function factory.
 

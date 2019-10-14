@@ -1,11 +1,11 @@
 MacOSX Development Environment Setup and Links
-==============================================
+----------------------------------------------
 
 * Brew installation:
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-## Tricks & Tips
-### vimwiki
+### Tricks & Tips
+#### vimwiki
 
   1.- Install and configure vim, with all required plugins.
  
@@ -28,7 +28,7 @@ Note: -g option in command only if MacVim is installed and is prefered.
   
   3.- Assign a shortcut in System Preferences.
 
-### Create bootable USB
+#### Create bootable USB
 1.- Format the USB from the *Disk Utility* 
 Note: Change format to *Mac OS Extended (Journaled)* and make sure the partition scheme is *GUID Partition Table*
 

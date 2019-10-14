@@ -1,7 +1,7 @@
 Word Clock with Arduino/Adafruit
-================================
+--------------------------------
 
-## Links
+### Links
 * https://github.com/adafruit/RTClib
 * https://github.com/adafruit/Adafruit_NeoPixel
 * https://github.com/adafruit/Adafruit_NeoMatrix

@@ -1,5 +1,5 @@
 Excursions into deduplication
-=============================
+-----------------------------
 
 The best way of tell how effective *string deduplication* would be in an application would be to look at the response rates and memory consumption. In the end, what does it matter if we saved memory, but our performance is worse? Memory is cheap. On the other hand, less memory consumption leads to less reachable objects, and can thus give us better speed.
 
@@ -197,7 +197,7 @@ lines:
 
 Since we have a method called "main" in our JVM, all our strings are sharing its `byte[]`. 
 
-## Young GC
+### Young GC
 
 So far we have only considered full GC. However, there's also support for triggering a young GC with the command `ygc`.  First we'll need to find the garbage collector `MXBean` for the G1 Young Generation. Then loop whilst the collection count is the same and allocate 1k byte arrays. Escape analysis won't remove the heap allocation since the arrays are larger than 64. Here's the code:
 
@@ -275,7 +275,7 @@ lines:
 
 It all works how it is supposed to. 
 
-<h2><code>-XX:+AlwaysTenure</code></h2>
+<h3><code>-XX:+AlwaysTenure</code></h3>
 
 A rather weird flag in OpenJDK is `-XX:+AlwaysTenure`. It effectively does away with the survivor spaces and promotes all survivors from young to old. Whilst you would not want to use this in production, it is fun to turn it on for this experiment. If we now send the following:
 
