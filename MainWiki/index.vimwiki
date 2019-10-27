@@ -40,38 +40,35 @@ Main Wiki Index
 #### Example complex diagram with PlantUML
 
 @startuml
-!include <font-awesome/common>
+!include <tupadr3/common>
 
 !define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Servers/database_server.puml
 !includeurl ICONURL/Servers/application_server.puml
+!includeurl ICONURL/Concepts/firewall_orange.puml
+!includeurl ICONURL/Clouds/cloud_disaster_red.puml
 
-' =================
-' == Declaration ==
-' =================
+title Office Icons Example
 
-OFF_APPLICATION_SERVER([Component 1], "Component 1", component, #Green)
-
-node "Node 1" {
-    package "Package 1" #Orange {
-        OFF_APPLICATION_SERVER([Component 4], "Component 4")
-        OFF_APPLICATION_SERVER(Component3, "Component 3", component)
-    }
-    OFF_APPLICATION_SERVER([Component 2])
+package "Sprites" {
+    OFF_DATABASE_SERVER(db,DB)
+    OFF_APPLICATION_SERVER(app,App-Server)
+    OFF_FIREWALL_ORANGE(fw,Firewall)
+    OFF_CLOUD_DISASTER_RED(cloud,Cloud)
+    db <-> app
+    app <--> fw
+    fw <.left.> cloud
 }
 
-
-
-' ====================
-' == Implementation ==
-' ====================
-
-
-node "Node 1" {
-    [Component 2] .[#Green]-> [Component 4]
-    Component3 <-left-> [Component 4]
-    [Component 4] -- [Component 1]
+package "Images" {
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Servers/database_server.png>\r DB" as db2
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Servers/application_server.png>\r App-Server" as app2
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Concepts/firewall_orange.png>\r Firewall" as fw2
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Clouds/cloud_disaster_red.png>\r Cloud" as cloud2
+    db2 <-> app2
+    app2 <--> fw2
+    fw2 <.left.> cloud2
 }
-
 @enduml
 
 ---
