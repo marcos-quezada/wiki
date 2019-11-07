@@ -4,4 +4,5 @@ config:
   gollumconfigfile: $HOME/wiki/admin/config.rb
   gollumport: 4567
   templatedir: $HOME/wiki/admin/templates
-
+  plantuml_port: 5678
+  gollum_plantuml_url: http://localhost:$config_plantuml_port/png

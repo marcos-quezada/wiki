@@ -37,6 +37,42 @@ Main Wiki Index
 
 ---
 
+#### Example complex diagram with PlantUML
+
+@startuml
+!include <tupadr3/common>
+
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Servers/database_server.puml
+!includeurl ICONURL/Servers/application_server.puml
+!includeurl ICONURL/Concepts/firewall_orange.puml
+!includeurl ICONURL/Clouds/cloud_disaster_red.puml
+
+title Office Icons Example
+
+package "Sprites" {
+    OFF_DATABASE_SERVER(db,DB)
+    OFF_APPLICATION_SERVER(app,App-Server)
+    OFF_FIREWALL_ORANGE(fw,Firewall)
+    OFF_CLOUD_DISASTER_RED(cloud,Cloud)
+    db <-> app
+    app <--> fw
+    fw <.left.> cloud
+}
+
+package "Images" {
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Servers/database_server.png>\r DB" as db2
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Servers/application_server.png>\r App-Server" as app2
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Concepts/firewall_orange.png>\r Firewall" as fw2
+    rectangle "<img:https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014/Clouds/cloud_disaster_red.png>\r Cloud" as cloud2
+    db2 <-> app2
+    app2 <--> fw2
+    fw2 <.left.> cloud2
+}
+@enduml
+
+---
+
 To start installation, I have created a gist, that you can download and it would set everything for you:
 
 `curl -Lks https://mquezada.page.link/cfg-install | /bin/bash`
