@@ -1,0 +1,12 @@
+Java stuff that gave me headaches and/or saved my life
+-------------------------------------------------------
+
+I had an issue trying to run a unit test calling code that used `readEntity` in production code that just returned a `InputStream` and not the content of the body and there's no way I was adding somthing in production code just for testing.
+
+My solution was to create a response and then use a Mockito `spy` to mock out the `readEntity` method:
+
+```java
+Response error = Response.serverError().build();
+Response mockResponse = spy(error);
+doReturn("{jsonbody}").when(mockResponse).readEntity(String.class);
+```

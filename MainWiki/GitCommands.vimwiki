@@ -61,3 +61,11 @@ _A list of my commonly used Git commands_
 | `git log --summary`                        | View changes (detailed)        |
 | `git log --oneline`                        | View changes (briefly)         |
 | `git diff [source branch] [target branch]` | Preview changes before merging |
+
+#### Pulling with submodules
+
+| Command                         | Description                                                      |
+| -------                         | -----------                                                      |
+| `git pull --recurse-submodules` | Pull all changes in the repo including changes in the submodules |
+| `git submodule update --remote` | Pull all changes for the submodules                              |
+
